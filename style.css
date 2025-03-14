@@ -11,7 +11,7 @@ body {
 header {
   background-image: url("img/background.jpg");
     color: white;
-    padding: 80px 20px;
+    padding: 1000px 200px;
 }
 
 h1 {
@@ -27,8 +27,8 @@ h1 span {
     background-color: red;
     color: white;
     border: none;
-    padding: 100px 310px;
-    font-size: 118px;
+    padding: px 15px 30px;
+    font-size: 18px;
     cursor: pointer;
 }
 
