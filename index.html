@@ -218,7 +218,7 @@
             </div>
         </section>
     </main>
-               <section class="slider-container">
+                      <section class="slider-container">
             <h2 class="slider-title">У АЛЬБОМОВ <span class="highlight">ПРЕМИАЛЬНОЕ</span><br>КАЧЕСТВО ПЕЧАТИ</h2>
             <div class="slider">
                 <div class="slide active"><img src="img/slide1.jpg" alt="Слайд 1"></div>
@@ -231,6 +231,9 @@
             <button class="prev" onclick="prevSlide()">&#10094;</button>
             <button class="next" onclick="nextSlide()">&#10095;</button>
         </section>
+        <div class="gift-button-container">
+            <button class="gift-button">Получить подарок</button>
+        </div>
     </main>
 
     <style>
@@ -257,6 +260,7 @@
             display: flex;
             transition: transform 0.5s ease-in-out;
             width: 100%;
+            aspect-ratio: 16 / 9;
         }
 
         .slide {
@@ -286,6 +290,33 @@
 
         .next {
             right: 10px;
+        }
+
+        .gift-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .gift-button {
+            background: #ff4500;
+            color: white;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .slider-container {
+                max-width: 90%;
+                border-radius: 15px;
+            }
+
+            .gift-button {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
         }
     </style>
 
@@ -320,4 +351,3 @@
     </script>
 </body>
 </html>
-
