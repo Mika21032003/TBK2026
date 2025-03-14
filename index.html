@@ -217,21 +217,24 @@
                 <h2>ВЫБИРАЕМ ФОТО В АЛЬБОМ НА СЪЕМКЕ</h2>
                 <p>Фото получились неудачными? Просто переснимем!</p>
             </div>
-        </section>
-    </main>
-                      <section class="slider-container">
+           <section class="slider-container">
             <h2 class="slider-title">У АЛЬБОМОВ <span class="highlight">ПРЕМИАЛЬНОЕ</span><br>КАЧЕСТВО ПЕЧАТИ</h2>
-            <div class="slider">
-                <div class="slide active"><img src="img/slide1.jpg" alt="Слайд 1"></div>
-                <div class="slide"><img src="img/slide2.jpg" alt="Слайд 2"></div>
-                <div class="slide"><img src="img/slide3.jpg" alt="Слайд 3"></div>
-                <div class="slide"><img src="img/slide4.jpg" alt="Слайд 4"></div>
-                <div class="slide"><img src="img/slide5.jpg" alt="Слайд 5"></div>
-                <div class="slide"><img src="img/slide6.jpg" alt="Слайд 6"></div>
-                 <button class="prev" onclick="prevSlide()">&#10094;</button>
-            <button class="next" onclick="nextSlide()">&#10095;</button>
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <div class="slide active"><img src="img/slide1.jpg" alt="Слайд 1"></div>
+                    <div class="slide"><img src="img/slide2.jpg" alt="Слайд 2"></div>
+                    <div class="slide"><img src="img/slide3.jpg" alt="Слайд 3"></div>
+                    <div class="slide"><img src="img/slide4.jpg" alt="Слайд 4"></div>
+                    <div class="slide"><img src="img/slide5.jpg" alt="Слайд 5"></div>
+                    <div class="slide"><img src="img/slide6.jpg" alt="Слайд 6"></div>
+                </div>
             </div>
-         </section>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </section>
+        <div class="gift-button-container">
+            <button class="gift-button">Получить подарок</button>
+        </div>
     </main>
 
     <style>
@@ -254,6 +257,11 @@
             color: red;
         }
 
+        .slider-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
         .slider {
             display: flex;
             transition: transform 0.5s ease-in-out;
@@ -263,11 +271,7 @@
 
         .slide {
             min-width: 100%;
-            display: none;
-        }
-
-        .slide.active {
-            display: block;
+            flex-shrink: 0;
         }
 
         .slider-container button {
@@ -321,22 +325,29 @@
     <script>
         let currentIndex = 0;
         const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
 
         function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-            });
+            const slider = document.querySelector('.slider');
+            slider.style.transform = `translateX(-${index * 100}%)`;
         }
 
         function prevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
             showSlide(currentIndex);
         }
 
         function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
+            currentIndex = (currentIndex + 1) % totalSlides;
             showSlide(currentIndex);
         }
+
+        function autoSlide() {
+            nextSlide();
+            setTimeout(autoSlide, 3000);
+        }
+
+        setTimeout(autoSlide, 3000);
     </script>
 
     <script>
