@@ -114,8 +114,137 @@
 </head>
 <body>
     <!-- Навигационная панель -->
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотобудка - Адаптивное меню</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Гамбургер-меню */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: #333;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* Мобильное меню */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #444;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .ask-button {
+            background: #007bff;
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-left: 15px;
+        }
+
+        /* Адаптация для мобильных */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 60px);
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                transition: all 0.3s ease;
+                box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                padding: 15px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .ask-button {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            /* Анимация гамбургера */
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 6px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -6px);
+            }
+        }
+    </style>
+</head>
+<body>
     <nav>
         <div class="logo">HEФOTOБУДКА</div>
+        
+        <!-- Гамбургер-иконка -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Навигационные ссылки -->
         <div class="nav-links">
             <a href="#">ПОЧЕМУ МЫ</a>
             <a href="#">КАЧЕСТВО</a>
@@ -127,6 +256,29 @@
             <a href="#" class="ask-button">ЗАДАТЬ ВОПРОС</a>
         </div>
     </nav>
+
+    <script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        }
+
+        // Закрытие меню при клике вне области
+        document.addEventListener('click', function(e) {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!nav.contains(e.target)) {
+                hamburger.classList.remove('active');
+                document.querySelector('.nav-links').classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
 
     <!-- Основной контент -->
     <header>
