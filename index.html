@@ -3,82 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Выпускной альбом</title>
+    <title>Фотобудка - Выпускной альбом</title>
     <style>
-        .hero-section {
-            background: #f8f9fa;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .title {
-            font-family: 'Arial Black', sans-serif;
-            font-size: 3.5rem;
-            line-height: 1.1;
-            color: #2d2d2d;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        .cta-button {
-            background: #e63946;
-            color: white;
-            padding: 20px 50px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-        }
-
-        .cta-button:hover {
-            background: #d62828;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            .title {
-                font-size: 2.5rem;
-            }
-            
-            .cta-button {
-                font-size: 1.2rem;
-                padding: 15px 40px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .title {
-                font-size: 2rem;
-                line-height: 1.2;
-            }
-        }
-    </style>
-</head>
-<body>
-    <section class="hero-section">
-        <h1 class="title">
-            ВЫПУСКНОЙ<br>
-            АЛЬБОМ ДЛЯ ТЕХ,<br>
-            КТО ХОЧЕТ<br>
-            <span style="color: #e63946;">ПО-ДРУГОМУ</span>
-        </h1>
-        <button class="cta-button">ПОЛУЧИТЬ ПОДАРОК</button>
-    </section>
-</body>
-</html>
-    <!-- Навигационная панель -->
-    <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фотобудка - Адаптивное меню</title>
-    <style>
+        /* Общие стили */
         * {
             margin: 0;
             padding: 0;
@@ -86,6 +13,7 @@
             font-family: Arial, sans-serif;
         }
 
+        /* Навигация */
         nav {
             display: flex;
             justify-content: space-between;
@@ -119,31 +47,59 @@
             background: #333;
             margin: 5px 0;
             transition: all 0.3s ease;
-            border-radius: 2px;
         }
 
-        /* Мобильное меню */
-        .nav-links {
-            display: flex;
-            gap: 20px;
+        /* Основной контент */
+        main {
+            margin-top: 80px; /* Отступ для фиксированной навигации */
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #444;
-            font-size: 16px;
-            transition: all 0.3s;
+        .hero-section {
+            background: #f8f9fa;
+            padding: 120px 20px 80px;
+            text-align: center;
         }
 
-        .ask-button {
-            background: #007bff;
-            color: white !important;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin-left: 15px;
+        .title {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            color: #2d2d2d;
+            margin-bottom: 40px;
+            text-transform: uppercase;
         }
 
-        /* Адаптация для мобильных */
+        .cta-button {
+            background: #e63946;
+            color: white;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Информационные карточки */
+        .info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 50px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Адаптивность */
         @media (max-width: 768px) {
             .hamburger {
                 display: block;
@@ -159,107 +115,58 @@
                 flex-direction: column;
                 padding: 20px;
                 transition: all 0.3s ease;
-                box-shadow: -4px 0 10px rgba(0,0,0,0.1);
             }
 
-            .nav-links.active {
-                right: 0;
+            .title {
+                font-size: 2rem;
             }
 
-            .nav-links a {
-                padding: 15px;
-                border-bottom: 1px solid #eee;
-            }
-
-            .ask-button {
-                margin-left: 0;
-                text-align: center;
-            }
-
-            /* Анимация гамбургера */
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 6px);
-            }
-
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -6px);
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Навигация -->
     <nav>
         <div class="logo">HEФOTOБУДКА</div>
-        
-        <!-- Гамбургер-иконка -->
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
-
-        <!-- Навигационные ссылки -->
         <div class="nav-links">
-            <a href="#">ПОЧЕМУ МЫ</a>
-            <a href="#">КАЧЕСТВО</a>
-            <a href="#">ФОТО</a>
-            <a href="#">ЦЕНЫ</a>
-            <a href="#">ОТЗЫВЫ</a>
-            <a href="#">FAQ</a>
-            <a href="#">КОНТАКТЫ</a>
-            <a href="#" class="ask-button">ЗАДАТЬ ВОПРОС</a>
+            <!-- Навигационные ссылки -->
         </div>
     </nav>
+
+    <main>
+        <!-- Основной контент -->
+        <section class="hero-section">
+            <h1 class="title">
+                ВЫПУСКНОЙ<br>
+                АЛЬБОМ ДЛЯ ТЕХ,<br>
+                КТО ХОЧЕТ<br>
+                <span style="color: #e63946;">ПО-ДРУГОМУ</span>
+            </h1>
+            <button class="cta-button">ПОЛУЧИТЬ ПОДАРОК</button>
+        </section>
+
+        <!-- Информационные карточки -->
+        <section class="info">
+            <!-- Карточки -->
+        </section>
+    </main>
 
     <script>
         function toggleMenu() {
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
-            
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
         }
-
-        // Закрытие меню при клике вне области
-        document.addEventListener('click', function(e) {
-            const nav = document.querySelector('nav');
-            const hamburger = document.querySelector('.hamburger');
-            
-            if (!nav.contains(e.target)) {
-                hamburger.classList.remove('active');
-                document.querySelector('.nav-links').classList.remove('active');
-            }
-        });
     </script>
-</body>
-</html>
-
-    <!-- Основной контент -->
-    <header>
-        <h1>ВЫПУСКНОЙ АЛЬБОМ ДЛЯ ТЕХ, КТО ХОЧЕТ <span>ПО-ДРУГОМУ</span></h1>
-        <button class="cta-btn">Получить подарок</button>
-    </header>
-
-    <section class="info">
-        <div class="info-card">
-            <img src="img/Захар.jpg" alt="Съемка в студии">
-            <h2>СЪЕМКА В НАШЕЙ УЮТНОЙ СТУДИИ</h2>
-            <p>Никаких ограничений по громкости музыки. Фотосессия — это ваша тусовка!</p>
-        </div>
-        <div class="info-card">
-            <img src="img/photo1.jpg" alt="Макет через 3 дня">
-            <h2>ГОТОВЫЙ МАКЕТ ЧЕРЕЗ 3 ДНЯ</h2>
-            <p>Зачем ждать альбом месяцами? Мы делаем быстро!</p>
-        </div>
-        <div class="info-card">
-            <img src="img/photo3.jpg" alt="Фото с друзьями">
-            <h2>ФОТО С ДРУЗЬЯМИ В ФОРМАТЕ ФОТОБУДКИ</h2>
-            <p>С кем и как решаете вы, а фотограф только подстрахует.</p>
-        </div>
-    </section>
 </body>
 </html>
