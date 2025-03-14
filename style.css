@@ -10,7 +10,7 @@ body {
 header {
    background-image: url("img/background.jpg"); no-repeat center center/cover;
     color: white;
-    padding: 80px 20px;
+    padding: 80px 100px;
 }
 
 h1 {
