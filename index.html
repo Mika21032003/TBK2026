@@ -173,10 +173,16 @@
 
 <section class="cards-container">
         <div class="card"><img src="img/photo1.jpg" alt="Фото 1"><h2>СЪЕМКА В НАШЕЙ СТУДИИ</h2></div>
-        <div class="card"><img src="img/photo2.jpg" alt="Фото 2"><h2>ГОТОВЫЙ МАКЕТ ЧЕРЕЗ 3 ДНЯ</h2></div>
-    <div class="card"><img src="img/photo3.jpg" alt="Фото 3"><h2>ГОТОВЫЙ МАКЕТ ЧЕРЕЗ 3 ДНЯ</h2></div>
-    <div class="card"><img src="img/photo4.jpg" alt="Фото 4"><h2>ГОТОВЫЙ МАКЕТ ЧЕРЕЗ 3 ДНЯ</h2></div>
-    <div class="card"><img src="img/photo5.jpg" alt="Фото 5"><h2>ГОТОВЫЙ МАКЕТ ЧЕРЕЗ 3 ДНЯ</h2></div>
+    <p>Никаких ограничений по громкости музыки. Фотосессия — это ваша тусовка!</p>
+        </div>
+        <div class="card"><img src="img/photo2.jpg" alt="Фото 2"><h2>ГОТОВЫЙ МАКЕТ ЧЕРЕЗ 3 ДНЯ ПОСЛЕ СЪЁМКИ</h2></div>
+    <p>Зачем ждать альбом месяцами? Мы делаем быстро!</p>
+    <div class="card"><img src="img/photo3.jpg" alt="Фото 3"><h2>ФОТО С ДРУЗЬЯМИ В ФОРМАТЕ ФОТОБУДКИ</h2></div>
+    <p>С кем и как решаешь ты, а наш фотограф запечатлит моменты.</p>
+    <div class="card"><img src="img/photo4.jpg" alt="Фото 4"><h2>ВЫБИРАЕМ ФОТО В АЛЬБОМ НА СЪЕМКЕ</h2></div>
+    <p>Фото получились неудачными? Просто переснимем!</p>
+    <div class="card"><img src="img/photo5.jpg" alt="Фото 5"><h2>ПРО ДИЗАИН И ОБЛОЖКИ</h2></div>
+    <p>Пять обложек и т.д. </p>
     </section>
 
     <section class="slider-container">
@@ -185,45 +191,14 @@
             <div class="slider">
                 <div class="slide"><img src="img/slide1.jpg" alt="Слайд 1"></div>
                 <div class="slide"><img src="img/slide2.jpg" alt="Слайд 2"></div>
+                <div class="slide"><img src="img/slide3.jpg" alt="Слайд 3"></div>
+                <div class="slide"><img src="img/slide4.jpg" alt="Слайд 4"></div>
+                <div class="slide"><img src="img/slide5.jpg" alt="Слайд 5"></div>
             </div>
-        </div>
-    </section>
-</body>
-</html>
-
-    <nav>
-        <div class="logo">ТВК</div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="nav-links">
-            <a href="#">ПОЧЕМУ МЫ</a>
-            <a href="#">КАЧЕСТВО</a>
-            <a href="#">ФОТО</a>
-            <a href="#">ЦЕНЫ</a>
-            <a href="#">ОТЗЫВЫ</a>
-            <a href="#">FAQ</a>
-            <a href="#">КОНТАКТЫ</a>
-        </div>
-    </nav>
-
-    <!-- Добавлено в раздел body -->
-<section class="slider-container">
-    <h2 class="slider-title">У АЛЬБОМОВ <span class="highlight">ПРЕМИАЛЬНОЕ</span> КАЧЕСТВО ПЕЧАТИ</h2>
-    <div class="slider-wrapper">
-        <div class="slider">
-            <div class="slide"><img src="img/slide1.jpg" alt="Пример печати 1"></div>
-            <div class="slide"><img src="img/slide2.jpg" alt="Пример печати 2"></div>
-            <div class="slide"><img src="img/slide3.jpg" alt="Пример печати 3"></div>
-            <div class="slide"><img src="img/slide4.jpg" alt="Пример печати 4"></div>
-            <div class="slide"><img src="img/slide5.jpg" alt="Пример печати 5"></div>
-        </div>
-        <button class="slider-arrow prev" aria-label="Предыдущий слайд">‹</button>
+            <button class="slider-arrow prev" aria-label="Предыдущий слайд">‹</button>
         <button class="slider-arrow next" aria-label="Следующий слайд">›</button>
-        <div class="slider-dots"></div>
-    </div>
+        </div>
+         </div>
 </section>
 
 <style>
@@ -388,47 +363,25 @@
             this.slider.parentElement.addEventListener('mouseleave', () => this.startAutoPlay());
         }
     }
-
-    // Инициализация слайдера при загрузке страницы
-    document.addEventListener('DOMContentLoaded', () => new Slider());
-</script>
-
-    <script>
-        let currentIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-
-        function showSlide(index) {
-            const slider = document.querySelector('.slider');
-            slider.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            showSlide(currentIndex);
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            showSlide(currentIndex);
-        }
-
-        function autoSlide() {
-            nextSlide();
-            setTimeout(autoSlide, 3000);
-        }
-
-        setTimeout(autoSlide, 3000);
-    </script>
-
-    <script>
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+    </section>
 </body>
 </html>
+
+    <nav>
+        <div class="logo">ТВК</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#">ПОЧЕМУ МЫ</a>
+            <a href="#">КАЧЕСТВО</a>
+            <a href="#">ФОТО</a>
+            <a href="#">ЦЕНЫ</a>
+            <a href="#">ОТЗЫВЫ</a>
+            <a href="#">FAQ</a>
+            <a href="#">КОНТАКТЫ</a>
+        </div>
+    </nav>
 
