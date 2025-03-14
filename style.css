@@ -10,10 +10,19 @@ body {
 
 header {
  <source src="img/background.mp4" type="video/mp4">
-    background-image: url("img/background.jpg");
-    color: white;
-    padding: 1000px 200px;
+    .bg-video {
+  position: fixed; /* Чтобы видео оставалось на фоне */
+  top: 50%; /* Центрируем видео по вертикали */
+  left: 50%; /* Центрируем видео по горизонтали */
+  width: 80vw; /* Ширина видео 80% от ширины окна */
+  height: 80vh; /* Высота видео 80% от высоты окна */
+  object-fit: cover; /* Растягиваем видео, сохраняя соотношение сторон */
+  filter: grayscale(100%); /* Делаем ЧБ */
+  z-index: -1; /* Чтобы контент был сверху */
+  transform: translate(-50%, -50%); /* Центрируем видео по оси X и Y */
+  border-radius: 20px; /* Закругленные углы */
 }
+
 
 h1 {
     font-size: 36px;
