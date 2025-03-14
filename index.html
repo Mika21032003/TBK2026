@@ -32,7 +32,6 @@
             color: #333;
         }
 
-        /* Гамбургер-меню */
         .hamburger {
             display: none;
             cursor: pointer;
@@ -49,7 +48,6 @@
             border-radius: 2px;
         }
 
-        /* Мобильное меню */
         .nav-links {
             display: flex;
             gap: 20px;
@@ -68,6 +66,39 @@
             padding: 10px 20px;
             border-radius: 5px;
             margin-left: 15px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 80px 20px;
+        }
+
+        .card {
+            width: 300px;
+            background: #f8f8f8;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            color: #d32f2f;
+            margin: 15px 0 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
         }
 
         @media (max-width: 768px) {
@@ -124,27 +155,27 @@
         </div>
     </nav>
 
-    <header>
-        <h1>ВЫПУСКНОЙ АЛЬБОМ ДЛЯ ТЕХ, КТО ХОЧЕТ <span>ПО-ДРУГОМУ</span></h1>
-        <button class="cta-btn">ПОЛУЧИТЬ ПОДАРОК</button>
-    </header>
-
     <main>
-        <section class="info">
-            <div class="info-card">
+        <section class="cards-container">
+            <div class="card">
                 <img src="img/photo1.jpg" alt="Фото 1">
-                <h2>Уникальные кадры</h2>
-                <p>Создайте выпускной альбом, который выделяется.</p>
+                <h2>СЪЕМКА В НАШЕЙ УЮТНОЙ СТУДИИ</h2>
+                <p>Никаких ограничений по громкости музыки. Фотосессия у нас — ваша тусовка.</p>
             </div>
-            <div class="info-card">
+            <div class="card">
                 <img src="img/photo2.jpg" alt="Фото 2">
-                <h2>Яркие эмоции</h2>
-                <p>Запечатлите лучшие моменты вашего выпускного.</p>
+                <h2>ГОТОВЫЙ МАКЕТ ЧЕРЕЗ 3 ДНЯ ПОСЛЕ СЪЁМКИ</h2>
+                <p>Зачем ждать альбом месяцами?</p>
             </div>
-            <div class="info-card">
+            <div class="card">
                 <img src="img/photo3.jpg" alt="Фото 3">
-                <h2>Новый формат</h2>
-                <p>Современный дизайн и профессиональная обработка.</p>
+                <h2>ФОТО С ДРУЗЬЯМИ В ФОРМАТЕ ФОТОБУДКИ</h2>
+                <p>С кем и как решаешь ты, а наш фотограф запечатлит моменты.</p>
+            </div>
+            <div class="card">
+                <img src="img/photo4.jpg" alt="Фото 4">
+                <h2>ВЫБИРАЕМ ФОТО В АЛЬБОМ НА СЪЕМКЕ</h2>
+                <p>Фото получились неудачными? Просто переснимем!</p>
             </div>
         </section>
     </main>
