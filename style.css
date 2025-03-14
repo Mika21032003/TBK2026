@@ -8,9 +8,11 @@ body {
 
 /* Шапка */
 
-header {
- <source src="img/background.mp4" type="video/mp4">
-    .bg-video {
+<header>
+  <video autoplay loop muted class="bg-video">
+    <source src="img/background.mp4" type="video/mp4">
+  </video>
+</header>
   position: fixed; /* Чтобы видео оставалось на фоне */
   top: 50%; /* Центрируем видео по вертикали */
   left: 50%; /* Центрируем видео по горизонтали */
