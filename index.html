@@ -60,14 +60,6 @@
             transition: all 0.3s;
         }
 
-        .ask-button {
-            background: #007bff;
-            color: white !important;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin-left: 15px;
-        }
-
         .hero-section {
             position: relative;
             text-align: center;
@@ -127,41 +119,46 @@
             margin: 15px 0 10px;
         }
 
-        .card p {
-            font-size: 14px;
-            color: #666;
+        .slider-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 50px auto 0;
+            overflow: hidden;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        .slider-title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .highlight {
+            color: red;
+        }
+
+        .slider-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+
+        .slide {
+            min-width: 100%;
+            flex-shrink: 0;
         }
 
         @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 60px;
-                right: -100%;
-                width: 100%;
-                height: calc(100vh - 60px);
-                background: white;
-                flex-direction: column;
-                padding: 20px;
-                transition: all 0.3s ease;
-                box-shadow: -4px 0 10px rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links a {
-                padding: 15px;
-                border-bottom: 1px solid #eee;
-            }
-
-            .ask-button {
-                margin-left: 0;
-                text-align: center;
+            .slider-container {
+                max-width: 90%;
+                border-radius: 15px;
             }
         }
     </style>
@@ -170,10 +167,7 @@
     <section class="hero-section">
         <img src="img/background.jpg" alt="Выпускной альбом по-другому">
         <div class="hero-text">
-            <h1>ВЫПУСКНОЙ АЛЬБОМ ДЛЯ ТЕХ, КТО ХОЧЕТ ПО-ДРУГОМУ</h1>
-            <button class="gift-button">Получить подарок</button>
-        </div>
-        <div class="gift-button-container">
+            <h1>ВЫПУСКНОЙ АЛЬБОМ ДЛЯ ТЕХ, КТО ХОЧЕТ <span class="highlight">ПО-ДРУГОМУ</span></h1>
         </div>
     </section>
 
@@ -192,45 +186,24 @@
             <a href="#">ОТЗЫВЫ</a>
             <a href="#">FAQ</a>
             <a href="#">КОНТАКТЫ</a>
-            <a href="#" class="ask-button">ЗАДАТЬ ВОПРОС</a>
         </div>
     </nav>
 
-      <main>
-        <section class="cards-container">
-            <div class="card">
-                <img src="img/photo1.jpg" alt="Фото 1">
-                <h2>СЪЕМКА В НАШЕЙ УЮТНОЙ СТУДИИ</h2>
-                <p>Никаких ограничений по громкости музыки. Фотосессия у нас — ваша тусовка.</p>
+    <section class="slider-container">
+        <h2 class="slider-title">У АЛЬБОМОВ <span class="highlight">ПРЕМИАЛЬНОЕ</span><br>КАЧЕСТВО ПЕЧАТИ</h2>
+        <div class="slider-wrapper">
+            <div class="slider">
+                <div class="slide active"><img src="img/slide1.jpg" alt="Слайд 1"></div>
+                <div class="slide"><img src="img/slide2.jpg" alt="Слайд 2"></div>
+                <div class="slide"><img src="img/slide3.jpg" alt="Слайд 3"></div>
+              <div class="slide"><img src="img/slide3.jpg" alt="Слайд 4"></div>
+              <div class="slide"><img src="img/slide3.jpg" alt="Слайд 5"></div>  
             </div>
-            <div class="card">
-                <img src="img/Захар.jpg" alt="Фото 2">
-                <h2>ГОТОВЫЙ МАКЕТ ЧЕРЕЗ 3 ДНЯ ПОСЛЕ СЪЁМКИ</h2>
-                <p>Зачем ждать альбом месяцами?</p>
-            </div>
-            <div class="card">
-                <img src="img/photo3.jpg" alt="Фото 3">
-                <h2>ФОТО С ДРУЗЬЯМИ В ФОРМАТЕ ФОТОБУДКИ</h2>
-                <p>С кем и как решаешь ты, а наш фотограф запечатлит моменты.</p>
-            </div>
-            <div class="card">
-                <img src="img/photo4.jpg" alt="Фото 4">
-                <h2>ВЫБИРАЕМ ФОТО В АЛЬБОМ НА СЪЕМКЕ</h2>
-                <p>Фото получились неудачными? Просто переснимем!</p>
-            </div>
+        </div>
+    </section>
+</body>
+</html>
 
-             </style>
-                 <section class="slider-container" style="margin-top: 50px;">
-            <h2 class="slider-title">У АЛЬБОМОВ <span class="highlight">ПРЕМИАЛЬНОЕ</span><br>КАЧЕСТВО ПЕЧАТИ</h2>
-            <div class="slider-wrapper">
-                <div class="slider">
-                    <div class="slide active"><img src="img/slide1.jpg" alt="Слайд 1"></div>
-                    <div class="slide"><img src="img/slide2.jpg" alt="Слайд 2"></div>
-                    <div class="slide"><img src="img/slide3.jpg" alt="Слайд 3"></div>
-                    <div class="slide"><img src="img/slide4.jpg" alt="Слайд 4"></div>
-                    <div class="slide"><img src="img/slide5.jpg" alt="Слайд 5"></div>
-                    <div class="slide"><img src="img/slide6.jpg" alt="Слайд 6"></div>
-                </div>
 
     <style>
         .slider-container {
