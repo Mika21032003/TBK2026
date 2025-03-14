@@ -22,17 +22,17 @@ h1 {
 }
 
 h1 span {
-    color: red;
+    color: #e63946;
 }
 
 .cta-btn {
-    background-color: red;
+    background-color: #e63946;
     color: white;
     border: none;
     padding: 15px 30px;
     font-size: 1.2rem;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 50px;
     transition: background 0.3s ease;
 }
 
@@ -43,10 +43,10 @@ h1 span {
 /* Информационные карточки */
 .info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
     padding: 40px 5%;
-    max-width: 200px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
