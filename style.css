@@ -1,3 +1,22 @@
+ </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">HEФOTOБУДКА</div>
+        <div class="nav-links">
+            <a href="#">ПОЧЕМУ МЫ</a>
+            <a href="#">КАЧЕСТВО</a>
+            <a href="#">ФОТО</a>
+            <a href="#">ЦЕНЫ</a>
+            <a href="#">ОТЗЫВЫ</a>
+            <a href="#">FAQ</a>
+            <a href="#">КОНТАКТЫ</a>
+            <a href="#" class="ask-button">ЗАДАТЬ ВОПРОС</a>
+        </div>
+    </nav>
+</body>
+</html>
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,6 +24,7 @@ body {
     background-color: #f8f8f8;
     text-align: center;
 }
+
 
 /* Шапка */
   header {
