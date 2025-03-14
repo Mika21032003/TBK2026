@@ -218,7 +218,8 @@
             </div>
         </section>
     </main>
-        <section class="slider-container">
+               <section class="slider-container">
+            <h2 class="slider-title">У АЛЬБОМОВ <span class="highlight">ПРЕМИАЛЬНОЕ</span><br>КАЧЕСТВО ПЕЧАТИ</h2>
             <div class="slider">
                 <div class="slide active"><img src="img/slide1.jpg" alt="Слайд 1"></div>
                 <div class="slide"><img src="img/slide2.jpg" alt="Слайд 2"></div>
@@ -231,13 +232,25 @@
             <button class="next" onclick="nextSlide()">&#10095;</button>
         </section>
     </main>
+
     <style>
         .slider-container {
             position: relative;
-            max-width: 800px;
+            max-width: 1000px;
             margin: auto;
             overflow: hidden;
             text-align: center;
+            border-radius: 20px;
+        }
+
+        .slider-title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .highlight {
+            color: red;
         }
 
         .slider {
@@ -264,6 +277,7 @@
             border: none;
             padding: 10px;
             cursor: pointer;
+            border-radius: 50%;
         }
 
         .prev {
