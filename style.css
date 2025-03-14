@@ -10,7 +10,7 @@ body {
 
 <header>
   <video autoplay loop muted class="bg-video">
-    <source src="img/background.mp4" type="video/mp4">
+    <source src="img/output(compress-video-online.com).mp4" type="video/mp4">
   </video>
 </header>
   position: fixed; /* Чтобы видео оставалось на фоне */
