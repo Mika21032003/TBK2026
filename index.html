@@ -306,45 +306,17 @@
     </div>
 
     <!-- Слайдер -->
-    <section class="slider-section">
-        <div class="slider-container">
-            <div class="slider-wrapper">
-                <div class="slider">
-                    <div class="slide"><img src="img/slide1.jpg" alt="Пример 1"></div>
-                    <div class="slide"><img src="img/slide2.jpg" alt="Пример 2"></div>
-                    <div class="slide"><img src="img/slide3.jpg" alt="Пример 3"></div>
-                </div>
-                <button class="slider-arrow prev" onclick="prevSlide()"></button>
-                <button class="slider-arrow next" onclick="nextSlide()"></button>
-            </div>
+   <div class="slider">
+        <button class="prev" onclick="prevSlide()">❮</button>
+        <div class="slides">
+            <img src="slide1.jpg" alt="Слайд 1">
+            <img src="slide2.jpg" alt="Слайд 2">
+            <img src="slide3.jpg" alt="Слайд 3">
+            <img src="slide4.jpg" alt="Слайд 4">
+            <img src="slide5.jpg" alt="Слайд 5">
         </div>
-    </section>
-
-    <script>
-        // Мобильное меню
-        function toggleMenu() {
-            document.querySelector('.hamburger').classList.toggle('active');
-            document.querySelector('.nav-links').classList.toggle('active');
-        }
-
-        // Слайдер
-        let currentSlide = 0;
-        const slider = document.querySelector('.slider');
-        const slides = document.querySelectorAll('.slide');
-
-        function updateSlider() {
-            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            updateSlider();
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlider();
-        }
+        <button class="next" onclick="nextSlide()">❯</button>
+    </div>
 
         // Автопрокрутка
         setInterval(nextSlide, 5000);
