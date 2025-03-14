@@ -9,7 +9,7 @@ body {
 /* Шапка */
 
 header {
-    background: url('background.jpg') no-repeat center center/cover;
+  background-image: url("img/background.jpg");
     color: white;
     padding: 80px 20px;
 }
@@ -27,8 +27,8 @@ h1 span {
     background-color: red;
     color: white;
     border: none;
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 100px 310px;
+    font-size: 118px;
     cursor: pointer;
 }
 
