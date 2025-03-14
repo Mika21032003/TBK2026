@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ТВК - Адаптивное меню</title>
+    <title>Фотобудка - Адаптивное меню</title>
     <link rel="stylesheet" href="style.css">
     <style>
         * {
@@ -66,6 +66,37 @@
             padding: 10px 20px;
             border-radius: 5px;
             margin-left: 15px;
+        }
+
+        .hero-section {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .hero-text h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
         }
 
         .cards-container {
@@ -136,8 +167,16 @@
     </style>
 </head>
 <body>
+    <section class="hero-section">
+        <img src="img/background.jpg" alt="Выпускной альбом по-другому">
+        <div class="hero-text">
+            <h1>ВЫПУСКНОЙ АЛЬБОМ ДЛЯ ТЕХ, КТО ХОЧЕТ ПО-ДРУГОМУ</h1>
+            <p>Получите подарок за заказ прямо сейчас!</p>
+        </div>
+    </section>
+
     <nav>
-        <div class="logo">ТВК</div>
+        <div class="logo">НЕФОТОБУДКА</div>
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -163,19 +202,9 @@
                 <p>Никаких ограничений по громкости музыки. Фотосессия у нас — ваша тусовка.</p>
             </div>
             <div class="card">
-                <img src="img/Захар.jpg" alt="Фото 2">
+                <img src="img/photo2.jpg" alt="Фото 2">
                 <h2>ГОТОВЫЙ МАКЕТ ЧЕРЕЗ 3 ДНЯ ПОСЛЕ СЪЁМКИ</h2>
                 <p>Зачем ждать альбом месяцами?</p>
-            </div>
-            <div class="card">
-                <img src="img/photo3.jpg" alt="Фото 3">
-                <h2>ФОТО С ДРУЗЬЯМИ В ФОРМАТЕ ФОТОБУДКИ</h2>
-                <p>С кем и как решаешь ты, а наш фотограф запечатлит моменты.</p>
-            </div>
-            <div class="card">
-                <img src="img/photo4.jpg" alt="Фото 4">
-                <h2>ВЫБИРАЕМ ФОТО В АЛЬБОМ НА СЪЕМКЕ</h2>
-                <p>Фото получились неудачными? Просто переснимем!</p>
             </div>
         </section>
     </main>
