@@ -7,23 +7,11 @@ body {
 }
 
 /* Шапка */
-
-<header>
-  <video autoplay loop muted class="bg-video">
-    <source src="img/output(compress-video-online.com).mp4" type="video/mp4">
-  </video>
-</header>
-  position: fixed; /* Чтобы видео оставалось на фоне */
-  top: 50%; /* Центрируем видео по вертикали */
-  left: 50%; /* Центрируем видео по горизонтали */
-  width: 80vw; /* Ширина видео 80% от ширины окна */
-  height: 80vh; /* Высота видео 80% от высоты окна */
-  object-fit: cover; /* Растягиваем видео, сохраняя соотношение сторон */
-  filter: grayscale(100%); /* Делаем ЧБ */
-  z-index: -1; /* Чтобы контент был сверху */
-  transform: translate(-50%, -50%); /* Центрируем видео по оси X и Y */
-  border-radius: 20px; /* Закругленные углы */
-}
+    <header>
+        <video autoplay loop muted class="bg-video">
+            <source src="img/output(compress-video-online.com).mp4" type="video/mp4">
+        </video>
+    </header>
 
 
 h1 {
