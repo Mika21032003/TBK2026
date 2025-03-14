@@ -49,7 +49,7 @@ h1 span {
     border-radius: 15px; /* Большее скругление углов */
     box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Усиленная тень */
     width: 100%;
-    max-width: 700px; /* Увеличен максимальный размер */
+    max-width: 500px; /* Увеличен максимальный размер */
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.5s ease-in-out;
@@ -59,7 +59,7 @@ h1 span {
 
 .info-card img {
     width: 100%;
-    height: 1850px; /* Увеличенная высота изображения */
+    height: 1050px; /* Увеличенная высота изображения */
     border-radius: 10px;
     object-fit: cover;
     margin-bottom: 20px; /* Больший отступ снизу */
@@ -79,7 +79,7 @@ h1 span {
 }
 
 /* Адаптация для мобильных */
-@media (max-width: 1768px) {
+@media (max-width: 1300px) {
     .info-card {
         max-width: 350px; /* Увеличенный размер для планшетов */
         padding: 25px;
@@ -90,14 +90,14 @@ h1 span {
     }
 }
 
-@media (max-width: 1768px) {
+@media (max-width: 1300px) {
     .info-card {
         max-width: 100%;
         padding: 20px;
     }
     
     .info-card img {
-        height: 3000px;
+        height: 1500px;
     }
     
     .info-card h2 {
