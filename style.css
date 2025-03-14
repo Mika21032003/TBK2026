@@ -9,7 +9,8 @@ body {
 /* Шапка */
 
 header {
-  background-image: url("img/background.jpg");
+ <source src="img/background.mp4" type="video/mp4">
+    background-image: url("img/background.jpg");
     color: white;
     padding: 1000px 200px;
 }
