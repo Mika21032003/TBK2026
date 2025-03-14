@@ -7,11 +7,12 @@ body {
 }
 
 /* Шапка */
-    <header>
-        <video autoplay loop muted class="bg-video">
-            <source src="img/output(compress-video-online.com).mp4" type="video/mp4">
-        </video>
-    </header>
+  header {
+    background: url('img/background.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 80px 20px;
+}
+
 
 
 h1 {
