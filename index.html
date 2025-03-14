@@ -1,334 +1,257 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фотобудка - Выпускные альбомы</title>
-    <style>
-        /* Общие стили */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            background: #f8f8f8;
-        }
-
-        /* Навигация */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background: white;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #d32f2f;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 35px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #d32f2f;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 5px 0;
-            transition: all 0.3s;
-        }
-
-        /* Шапка */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-top: 80px;
-            background: linear-gradient(rgba(0,0,0,0.5), url('img/hero-bg.jpg') center/cover;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-        }
-
-        .cta-btn {
-            background: #d32f2f;
-            color: white;
-            padding: 15px 45px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-        }
-
-        /* Карточки */
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 20px;
-        }
-
-        /* Слайдер */
-        .slider-section {
-            padding: 60px 20px;
-            background: white;
-        }
-
-        .slider-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .slider-wrapper {
-            overflow: hidden;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .slider {
-            display: flex;
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .slide {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            border-radius: 25px;
-        }
-
-        .slider-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(255,255,255,0.9);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-        }
-
-        .slider-arrow::after {
-            content: '';
-            width: 12px;
-            height: 12px;
-            border-left: 3px solid #333;
-            border-bottom: 3px solid #333;
-        }
-
-        .prev {
-            left: 30px;
-            transform: translateY(-50%) rotate(45deg);
-        }
-
-        .next {
-            right: 30px;
-            transform: translateY(-50%) rotate(-135deg);
-        }
-
-        /* Адаптивность */
-        @media (max-width: 1024px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .slide img {
-                height: 400px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 30px;
-                gap: 25px;
-                transition: right 0.3s;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-                padding: 0 20px;
-            }
-
-            .card img {
-                height: 180px;
-            }
-
-            .slider-arrow {
-                width: 40px;
-                height: 40px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Навигация -->
-    <nav>
-        <div class="logo">ФОТОБУДКА</div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="nav-links">
-            <a href="#why">Почему мы</a>
-            <a href="#quality">Качество</a>
-            <a href="#portfolio">Портфолио</a>
-            <a href="#price">Цены</a>
-            <a href="#contacts">Контакты</a>
-        </div>
-    </nav>
-
-    <!-- Шапка -->
-    <section class="hero">
-        <h1>ВЫПУСКНОЙ АЛЬБОМ<br>ДЛЯ ТЕХ, КТО ХОЧЕТ<br><span style="color: #ffd700;">ПО-ДРУГОМУ</span></h1>
-        <button class="cta-btn">Получить консультацию</button>
-    </section>
-
-    <!-- Карточки -->
-    <div class="cards-container">
-        <div class="card">
-            <img src="img/studio.jpg" alt="Студия">
-            <h2>Профессиональная съемка</h2>
-            <p>Современное оборудование и креативные зоны</p>
-        </div>
-        <div class="card">
-            <img src="img/design.jpg" alt="Дизайн">
-            <h2>Эксклюзивный дизайн</h2>
-            <p>Уникальные макеты за 72 часа</p>
-        </div>
-        <div class="card">
-            <img src="img/photobooth.jpg" alt="Фотобудка">
-            <h2>Веселая фотобудка</h2>
-            <p>Яркие моменты с друзьями</p>
-        </div>
-    </div>
-
-    <!-- Слайдер -->
-   <div class="slider">
-        <button class="prev" onclick="prevSlide()">❮</button>
-        <div class="slides">
-            <img src="slide1.jpg" alt="Слайд 1">
-            <img src="slide2.jpg" alt="Слайд 2">
-            <img src="slide3.jpg" alt="Слайд 3">
-            <img src="slide4.jpg" alt="Слайд 4">
-            <img src="slide5.jpg" alt="Слайд 5">
-        </div>
-        <button class="next" onclick="nextSlide()">❯</button>
-    </div>
-
-        // Автопрокрутка
-        setInterval(nextSlide, 5000);
-
-        // Закрытие меню при клике вне области
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav')) {
-                document.querySelector('.nav-links').classList.remove('active');
-                document.querySelector('.hamburger').classList.remove('active');
-            }
-        });
-    </script>
-</body>
-</html>
+ <html lang="ru">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>ТВК - Адаптивное меню</title>
+     <link rel="stylesheet" href="style.css">
+     <style>
+         * {
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+             font-family: Arial, sans-serif;
+         }
+ 
+         nav {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             padding: 15px 20px;
+             background: white;
+             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+             position: fixed;
+             width: 100%;
+             top: 0;
+             z-index: 1000;
+         }
+ 
+         .logo {
+             font-size: 20px;
+             font-weight: bold;
+             color: #333;
+         }
+ 
+         .hamburger {
+             display: none;
+             cursor: pointer;
+             padding: 10px;
+         }
+ 
+         .hamburger span {
+             display: block;
+             width: 30px;
+             height: 3px;
+             background: #333;
+             margin: 5px 0;
+             transition: all 0.3s ease;
+             border-radius: 2px;
+         }
+ 
+         .nav-links {
+             display: flex;
+             gap: 20px;
+         }
+ 
+         .nav-links a {
+             text-decoration: none;
+             color: #444;
+             font-size: 16px;
+             transition: all 0.3s;
+         }
+ 
+         .hero-section {
+             position: relative;
+             text-align: center;
+             color: white;
+         }
+ 
+         .hero-section img {
+             width: 100%;
+             height: auto;
+             display: block;
+         }
+ 
+         .hero-text {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background: rgba(0, 0, 0, 0.6);
+             padding: 20px;
+             border-radius: 10px;
+         }
+ 
+         .hero-text h1 {
+             font-size: 32px;
+             margin-bottom: 10px;
+         }
+ 
+         .hero-text p {
+             font-size: 18px;
+         }
+ 
+         .cards-container {
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: center;
+             gap: 20px;
+             padding: 80px 20px;
+         }
+ 
+         .card {
+             width: 300px;
+             background: #f8f8f8;
+             border-radius: 15px;
+             padding: 20px;
+             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+             text-align: center;
+         }
+ 
+         .card img {
+             width: 100%;
+             border-radius: 10px;
+         }
+ 
+         .card h2 {
+             font-size: 18px;
+             color: #d32f2f;
+             margin: 15px 0 10px;
+         }
+ 
+         .slider-container {
+             position: relative;
+             max-width: 1200px;
+             margin: 50px auto 0;
+             overflow: hidden;
+             text-align: center;
+             border-radius: 20px;
+         }
+ 
+         .slider-title {
+             font-size: 24px;
+             font-weight: bold;
+             text-align: center;
+         }
+ 
+         .highlight {
+             color: red;
+         }
+ 
+         .slider-wrapper {
+             overflow: hidden;
+             position: relative;
+         }
+ 
+         .slider {
+             display: flex;
+             transition: transform 0.5s ease-in-out;
+             width: 100%;
+             aspect-ratio: 16 / 9;
+         }
+ 
+         .slide {
+             min-width: 100%;
+             flex-shrink: 0;
+         }
+ 
+         @media (max-width: 768px) {
+             .slider-container {
+                 max-width: 90%;
+                 border-radius: 15px;
+             }
+         }
+     </style>
+ </head>
+ <body>
+     <section class="hero-section">
+         <img src="img/background.jpg" alt="Выпускной альбом по-другому">
+         <div class="hero-text">
+             <h1>ВЫПУСКНОЙ АЛЬБОМ ДЛЯ ТЕХ, КТО ХОЧЕТ <span class="highlight">ПО-ДРУГОМУ</span></h1>
+         </div>
+     </section>
+ 
+ <section class="cards-container">
+         <div class="card"><img src="img/photo1.jpg" alt="Фото 1"><h2>СЪЕМКА В НАШЕЙ СТУДИИ</h2></div><p>Никаких ограничений по громкости музыки. Фотосессия — это ваша тусовка!</p></div>
+         </div>
+         <div class="card"><img src="img/photo2.jpg" alt="Фото 2"><h2>ГОТОВЫЙ МАКЕТ ЧЕРЕЗ 3 ДНЯ ПОСЛЕ СЪЁМКИ</h2></div><p>Зачем ждать альбом месяцами? Мы делаем быстро!</p>
+     <p>Зачем ждать альбом месяцами? Мы делаем быстро!</p>
+     <div class="card"><img src="img/photo3.jpg" alt="Фото 3"><h2>ФОТО С ДРУЗЬЯМИ В ФОРМАТЕ ФОТОБУДКИ</h2></div><p>С кем и как решаешь ты, а наш фотограф запечатлит моменты.</p>
+     <div class="card"><img src="img/photo4.jpg" alt="Фото 4"><h2>ВЫБИРАЕМ ФОТО В АЛЬБОМ НА СЪЕМКЕ</h2></div>   <p>Фото получились неудачными? Просто переснимем!</p>
+ 
+     <div class="card"><img src="img/photo5.jpg" alt="Фото 5"><h2>ПРО ДИЗАИН И ОБЛОЖКИ</h2></div><p>Пять обложек и т.д. </p>
+     </section>
+ 
+  <main>
+         <section class="cards-container">
+             <div class="card">
+                 <img src="img/photo1.jpg" alt="Фото 1">
+                 <h2>СЪЕМКА В НАШЕЙ УЮТНОЙ СТУДИИ</h2>
+                 <p>Никаких ограничений по громкости музыки. Фотосессия у нас — ваша тусовка.</p>
+             </div>
+             <div class="card">
+                 <img src="img/Захар.jpg" alt="Фото 2">
+                 <h2>ГОТОВЫЙ МАКЕТ ЧЕРЕЗ 3 ДНЯ ПОСЛЕ СЪЁМКИ</h2>
+                 <p>Зачем ждать альбом месяцами?</p>
+             </div>
+             <div class="card">
+                 <img src="img/photo3.jpg" alt="Фото 3">
+                 <h2>ФОТО С ДРУЗЬЯМИ В ФОРМАТЕ ФОТОБУДКИ</h2>
+                 <p>С кем и как решаешь ты, а наш фотограф запечатлит моменты.</p>
+             </div>
+             <div class="card">
+                 <img src="img/photo4.jpg" alt="Фото 4">
+                 <h2>ВЫБИРАЕМ ФОТО В АЛЬБОМ НА СЪЕМКЕ</h2>
+                 <p>Фото получились неудачными? Просто переснимем!</p>
+             </div>
+     
+     <section class="slider-container">
+         <h2 class="slider-title">У АЛЬБОМОВ <span class="highlight">ПРЕМИАЛЬНОЕ</span><br>КАЧЕСТВО ПЕЧАТИ</h2>
+         <div class="slider-wrapper">
+             <div class="slider">
+                 <div class="slide"><img src="img/slide1.jpg" alt="Слайд 1"></div>
+                 <div class="slide"><img src="img/slide2.jpg" alt="Слайд 2"></div>
+                 <div class="slide"><img src="img/slide3.jpg" alt="Слайд 3"></div>
+                 <div class="slide"><img src="img/slide4.jpg" alt="Слайд 4"></div>
+                 <div class="slide"><img src="img/slide5.jpg" alt="Слайд 5"></div>
+              </div>
+             <button class="slider-arrow prev" onclick="prevSlide()">‹</button>
+             <button class="slider-arrow next" onclick="nextSlide()">›</button>
+         </div>
+     </section>
+ 
+     <script>
+         let currentIndex = 0;
+         const slides = document.querySelectorAll('.slide');
+         function showSlide(index) {
+             const slider = document.querySelector('.slider');
+             slider.style.transform = `translateX(-${index * 100}%)`;
+         }
+         function prevSlide() { currentIndex = (currentIndex - 1 + slides.length) % slides.length; showSlide(currentIndex); }
+         function nextSlide() { currentIndex = (currentIndex + 1) % slides.length; showSlide(currentIndex); }
+     </script>
+ </body>
+ </html>
+ 
+ </body>
+ </html>
+ 
+     <nav>
+         <div class="logo">ТВК</div>
+         <div class="hamburger" onclick="toggleMenu()">
+             <span></span>
+             <span></span>
+             <span></span>
+         </div>
+         <div class="nav-links">
+             <a href="#">ПОЧЕМУ МЫ</a>
+             <a href="#">КАЧЕСТВО</a>
+             <a href="#">ФОТО</a>
+             <a href="#">ЦЕНЫ</a>
+             <a href="#">ОТЗЫВЫ</a>
+             <a href="#">FAQ</a>
+             <a href="#">КОНТАКТЫ</a>
+         </div>
+     </nav>
+ ~
 
