@@ -43,92 +43,68 @@ h1 span {
 }
 
 /* Информационные карточки */
-.info {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 100px;
-    padding: 60px 30px;
-    box-sizing: border-box;
-}
-
 .info-card {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 30px; /* Увеличен внутренний отступ */
+    border-radius: 15px; /* Большее скругление углов */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Усиленная тень */
     width: 100%;
-    max-width: 300px;
+    max-width: 400px; /* Увеличен максимальный размер */
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.5s ease-in-out;
-    margin: 10px;
+    margin: 15px;
     box-sizing: border-box;
 }
 
 .info-card img {
     width: 100%;
-    height: 200px;
-    border-radius: 100px;
+    height: 250px; /* Увеличенная высота изображения */
+    border-radius: 10px;
     object-fit: cover;
-    margin-bottom: 150px;
+    margin-bottom: 20px; /* Больший отступ снизу */
 }
 
 .info-card h2 {
     color: #333;
-    font-size: 1.4em;
-    margin: 10px 0;
+    font-size: 1.6em; /* Увеличен размер заголовка */
+    margin: 15px 0;
 }
 
 .info-card p {
     color: #666;
-    line-height: 1.5;
-    font-size: 0.95em;
+    line-height: 1.6;
+    font-size: 1.1em; /* Увеличен размер текста */
+    margin-bottom: 15px;
 }
 
-/* Медиа-запросы для адаптива */
+/* Адаптация для мобильных */
 @media (max-width: 768px) {
-    header {
-        padding: 100px 15px 60px;
-        margin-top: 60px;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    .cta-btn {
-        padding: 12px 25px;
-        font-size: 16px;
-        min-width: 200px;
-    }
-
     .info-card {
-        margin: 10px 0;
-        max-width: 100%;
+        max-width: 350px; /* Увеличенный размер для планшетов */
+        padding: 25px;
+    }
+    
+    .info-card img {
+        height: 220px;
     }
 }
 
 @media (max-width: 480px) {
-    header {
-        padding: 80px 10px 40px;
-        margin-top: 50px;
+    .info-card {
+        max-width: 100%;
+        padding: 20px;
     }
-
-    h1 {
-        font-size: 24px;
+    
+    .info-card img {
+        height: 200px;
     }
-
-    .cta-btn {
-        width: 100%;
-        padding: 10px;
-    }
-
+    
     .info-card h2 {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
-
+    
     .info-card p {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 }
